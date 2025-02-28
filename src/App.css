@@ -1,0 +1,178 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background: #5c5c5c;
+  border-radius: 10px;
+}
+
+.score-label {
+  color: #fff;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.score-value {
+  color: #ffd700;
+  font-size: 32px;
+  padding: 0 10px 0 0;
+}
+
+.game-headline {
+  text-align: center;
+  width: 100%;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.text-carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 5rem;
+  width: fit-content;
+  margin: auto;
+}
+
+.text-carousel {
+  background: #5c5c5c;
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: green;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 40px;
+  color: green;
+  font-size: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+  margin: 0;
+}
+
+.next-button {
+  background: blue;
+  color: white;
+}
+
+.next-button:hover {
+  background: darkblue;
+}
+
+.play-again-button {
+  background: orange;
+  color: white;
+}
+
+.play-again-button:hover {
+  background: darkorange;
+}
+
+.sad-emoji {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: fit-content;
+  margin: 100px auto;
+}
+
+.option-button {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  margin: 10px;
+}
+
+.option-button.correct {
+  background: green;
+  color: white;
+}
+
+.option-button.wrong {
+  background: red;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.next-button,
+.play-again-button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
