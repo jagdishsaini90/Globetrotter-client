@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/logo.webp";
-import { motion, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useQuestionContext } from "../context/questionContext";
 
 const Header = () => {

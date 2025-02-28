@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Clues from "./Clues";
 import Confetti from "react-confetti";
-import FunFact from "./FunFact";
 import { useQuestionContext } from "../context/questionContext";
+import MessageModal from "./MessageModal";
 
 const buttonAnimation = {
   initial: { y: 10, opacity: 0 },
@@ -16,38 +16,36 @@ const Question = ({
   clues = [],
   fun_fact = [],
   options = [],
+  trivia = [],
   correct_answer,
 }) => {
   const [selected, setSelected] = useState(null);
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  const { setCurrentQuestionIndex, currentQuestionIndex, getQuestion } =
+  const { setCurrentQuestionIndex, getQuestion, checkQuestion, answerStatus } =
     useQuestionContext();
 
   const handleSelect = (option) => {
-    const isCorrect = option.slice(0, 1) === correct_answer;
     setSelected(option);
-    setIsCorrectAnswer(isCorrect);
-
-    if (isCorrect) {
+    if (checkQuestion(option)) {
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 10000);
       setCurrentQuestionIndex((prev) => prev + 1);
     }
   };
 
+  const handleGenerate = () => {
+    setSelected(null);
+    getQuestion();
+  };
+
   const handleNext = () => {
-    if (isCorrectAnswer) {
-      setSelected(null);
-      setIsCorrectAnswer(false);
-      getQuestion();
+    if (answerStatus === "correct") {
+      handleGenerate();
     }
   };
 
   const handlePlayAgain = () => {
-    setSelected(null);
-    setIsCorrectAnswer(false);
+    handleGenerate();
     setCurrentQuestionIndex(0);
   };
 
@@ -95,22 +93,11 @@ const Question = ({
         </motion.button>
       </div>
 
-      {selected && !isCorrectAnswer && (
-        <motion.div
-          className="sad-emoji"
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          Oops! 😢
-        </motion.div>
-      )}
-
-      <FunFact
-        isOpen={showConfetti}
+      <MessageModal
+        isOpen={answerStatus !== "pending"}
         onClose={() => setShowConfetti(false)}
-        text={fun_fact[0]}
+        text={answerStatus === "wrong" ? trivia[0] : fun_fact[0]}
+        type={answerStatus === "wrong"}
       />
     </div>
   );

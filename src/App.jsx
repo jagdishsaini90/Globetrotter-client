@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Question from "./components/Question";
+import Loader from "./components/Loader";
 import { useQuestionContext } from "./context/questionContext";
 
 function App() {
-  const { getQuestion, question, loading } = useQuestionContext();
+  const { getQuestion, question, loading, error } = useQuestionContext();
 
   useEffect(() => {
     getQuestion();
@@ -15,7 +16,8 @@ function App() {
     <>
       <Header />
       <h1 className="game-headline">🌃 Guess the City 🌆</h1>
-      {!loading && <Question {...question} />}
+      {loading ? <Loader /> : <Question {...question} />}
+      {error && <Error error={error} />}
     </>
   );
 }
