@@ -1,12 +1,48 @@
-# React + Vite
+# 🧠 Trivia City Selection Game - Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Introduction
 
-Currently, two official plugins are available:
+Welcome to **Trivia City Selection Game**, a fun and interactive game where players guess cities based on trivia clues. Users can **challenge friends**, earn **brownie points**, and improve their geography knowledge! 🌍
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📖 Table of Contents
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. [Features](#features)
+2. [Getting Started](#getting-started)
+3. [Project Structure](#project-structure)
+4. [API Endpoints](#api-endpoints)
+5. [Game Flow](#game-flow)
+
+---
+
+## 🚀 Features
+
+✅ **Single Mode** - Play alone or challenge friends(incoming in next update)!  
+✅ **Trivia-based Guessing** - Answer city-related trivia to earn points.  
+✅ **Leaderboard & Score Tracking** - Compete globally with friends(upcoming).  
+✅ **Fun Facts & Educational Content** - Learn about cities after guessing.
+
+---
+
+## 🛠 Getting Started
+
+### 1️⃣ Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- Git
+
+### 2️⃣ Installation
+
+```sh
+# Clone the repository
+git clone https://github.com/jagdishsaini90/Globetrotter-client.git
+cd trivia-city-game
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
