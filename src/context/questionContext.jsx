@@ -27,7 +27,7 @@ export const QuestionProvider = ({ children }) => {
     setAnswerStatus("pending");
 
     try {
-      const response = await fetch(CONFIG.local);
+      const response = await fetch(CONFIG.requestUrl);
       if (!response.ok)
         throw new Error(`Error ${response.status}: ${response.statusText}`);
 
