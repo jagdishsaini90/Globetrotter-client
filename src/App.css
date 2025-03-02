@@ -4,11 +4,37 @@ header {
   align-items: center;
 }
 
+header .right-menu {
+  display: flex;
+}
+
+.modal-create-room-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #5c5c5c;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  margin-right: 20px;
+}
+
+.modal-create-room-btn:hover {
+  background: #3b3b3b;
+}
+
+.modal-create-room-btn:active {
+  transform: scale(0.95);
+}
+
 .score-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  font-size: 24px;
   font-weight: bold;
   background: #5c5c5c;
   border-radius: 10px;
@@ -17,7 +43,7 @@ header {
 .score-label {
   color: #fff;
   margin: 0;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .score-value {
@@ -222,4 +248,31 @@ header {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease-out, background 0.3s ease-in-out;
+}
+
+.modal-button:hover {
+  transform: scale(1.1);
+}
+
+.modal-button:active {
+  transform: scale(0.9);
+}
+
+.modal-oops {
+  background-color: #ff4c4c;
+}
+
+.modal-fun-fact {
+  background-color: #4caf50;
 }

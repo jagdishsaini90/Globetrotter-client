@@ -39,7 +39,14 @@ const MessageModal = ({ isOpen, onClose, type, text }) => {
             <p>{text}</p>
           </>
         )}
-        <button onClick={onClose}>Close</button>
+        <motion.button
+          onClick={onClose}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className={`modal-button ${type ? "modal-oops" : "modal-fun-fact"}`}
+        >
+          {type ? "Try Again" : "Close"}
+        </motion.button>
       </motion.div>
     </motion.div>
   );

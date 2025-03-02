@@ -20,16 +20,15 @@ const Question = ({
   correct_answer,
 }) => {
   const [selected, setSelected] = useState(null);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  const { setCurrentQuestionIndex, getQuestion, checkQuestion, answerStatus } =
+  const { setQuestionData, getQuestion, checkQuestion, answerStatus } =
     useQuestionContext();
 
   const handleSelect = (option) => {
     setSelected(option);
     if (checkQuestion(option)) {
-      setShowConfetti(true);
-      setCurrentQuestionIndex((prev) => prev + 1);
+      setOpenModal(true);
     }
   };
 
@@ -39,20 +38,20 @@ const Question = ({
   };
 
   const handleNext = () => {
-    if (answerStatus === "correct") {
+    if (selected) {
       handleGenerate();
     }
   };
 
   const handlePlayAgain = () => {
     handleGenerate();
-    setCurrentQuestionIndex(0);
+    setQuestionData({ correct: 0, wrong: 0 });
   };
 
   return (
     <div>
       <Clues texts={clues} />
-      {showConfetti && <Confetti />}
+      {openModal && answerStatus === "correct" && <Confetti />}
 
       <div className="options-container">
         {options.map((option, index) => {
@@ -94,8 +93,8 @@ const Question = ({
       </div>
 
       <MessageModal
-        isOpen={answerStatus !== "pending"}
-        onClose={() => setShowConfetti(false)}
+        isOpen={openModal}
+        onClose={() => setOpenModal(false)}
         text={answerStatus === "wrong" ? trivia[0] : fun_fact[0]}
         type={answerStatus === "wrong"}
       />
