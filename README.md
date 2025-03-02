@@ -1,4 +1,4 @@
-# 🧠 Trivia City Selection Game - Documentation
+# 🧠 GlobetRotter Trivia City Selection Game - Documentation
 
 ## 📌 Introduction
 
@@ -8,20 +8,19 @@ Welcome to **Trivia City Selection Game**, a fun and interactive game where play
 
 ## 📖 Table of Contents
 
-1. [Features](#features)
-2. [Getting Started](#getting-started)
-3. [Project Structure](#project-structure)
-4. [API Endpoints](#api-endpoints)
-5. [Game Flow](#game-flow)
+1. Features
+2. Getting Started
+3. API Endpoints
+4. Game Flow
 
 ---
 
 ## 🚀 Features
 
-✅ **Single Mode** - Play alone or challenge friends(incoming in next update)!  
+✅ **Single Mode** - Play alone and test your geography skills. (Multiplayer mode coming soon!)  
 ✅ **Trivia-based Guessing** - Answer city-related trivia to earn points.  
-✅ **Leaderboard & Score Tracking** - Compete globally with friends(upcoming).  
-✅ **Fun Facts & Educational Content** - Learn about cities after guessing.
+✅ **Leaderboard & Score Tracking** - Compete globally with friends (upcoming feature).  
+✅ **Fun Facts & Educational Content** - Learn interesting facts about cities after guessing.
 
 ---
 
@@ -46,3 +45,19 @@ npm install
 # Start the development server
 npm run dev
 ```
+
+---
+
+## 🚀 API Endpoints
+
+1.  /question - to get a interesting Question for the challenge
+
+---
+
+---
+
+## 🚀 Game Flow
+
+1.  Select a valid answer for the question and check for your score in the header
+
+---
